@@ -1,17 +1,36 @@
-const todos = ["Order cat food", "Clean kitchen", "Buy food", "Do Work", "Exercise "]
+const todos = [{
+     text: "Order cat food",
+     completed: true
+}, {
+    text: "Clean kitchen",
+    completed: false
+}, {
+    text: "Buy food",
+    completed: true
+}, {
+    text: "Do work",
+    completed: false
+}, {
+    text: "Exercise",
+    completed: true
+}]
 
-// todos.splice(2, 1)
-
-// todos.push("This is new item")
-
-// todos.shift()
-
-// console.log(`You have ${todos.length} todos!`)
-
-// todos.forEach( function (item, index) {
-//     console.log(`${index + 1}. ${item}`)
-// })
-
-for (let count = 0; count < todos.length; count++) {
-    console.log(`${count + 1}. ${todos[count]}`)
+const deleteNote = function (todos, todoText ) {
+    const index = todos.findIndex(function (todo) {
+        return todo.text.toLowerCase() === todoText.toLowerCase()
+    })
+    if (index > -1) {
+        todos.splice(index, 1)
+    }
 }
+
+const getThingsToDo = function (todos) {
+    return todos.filter(function (todo) {
+        return !todo.completed
+    })
+}
+
+console.log(getThingsToDo(todos))
+
+// deleteNote(todos, "!!buy food")
+// console.log(todos)
