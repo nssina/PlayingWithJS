@@ -32,5 +32,5 @@ const getThingsToDo = function (todos) {
 
 console.log(getThingsToDo(todos))
 
-// deleteNote(todos, "!!buy food")
-// console.log(todos)
+deleteNote(todos, "!!buy food")
+console.log(todos)
