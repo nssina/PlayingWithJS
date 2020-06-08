@@ -1,4 +1,4 @@
- // Objects file
+
 
  let myBook = {
      title: `1984`,
