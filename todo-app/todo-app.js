@@ -29,4 +29,8 @@ todos.forEach(function (todo) {
    document.querySelector("body").appendChild(p)
 })
 
-// Ready for new web app
+// Listen for new todo creation
+
+document.querySelector('button').addEventListener('click', function(e) {
+   console.log('add a new todo')
+})
