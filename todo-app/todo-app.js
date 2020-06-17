@@ -60,3 +60,5 @@ document.querySelector('#new-todo').addEventListener('submit', function (e) {
    renderTodos(todos, filters)
    e.target.elements.text.value = ""
 })
+
+// adding comment
