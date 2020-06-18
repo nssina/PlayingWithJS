@@ -14,3 +14,5 @@ console.log(password.includes("password"))
 
 // Trim
 console.log(name.trim())
+
+// this will trim strings
