@@ -39,7 +39,6 @@ document.querySelector('#search-text').addEventListener('input', function(e) {
     renderNotes(notes, filters)
 })
 
-document.querySelector('#for-fun').addEventListener('change', function (e) {
-    console.log(e.target.checked)
+document.querySelector("#filtered-by").addEventListener("change", function(e) {
+    console.log(e.target.value)
 })
-
