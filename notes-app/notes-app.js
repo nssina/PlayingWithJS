@@ -42,3 +42,4 @@ document.querySelector('#search-text').addEventListener('input', function(e) {
 document.querySelector('#for-fun').addEventListener('change', function (e) {
     console.log(e.target.checked)
 })
+
