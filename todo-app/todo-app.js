@@ -39,8 +39,6 @@ const renderTodos = function (todos, filters) {
 
 renderTodos(todos, filters)
 
-// Listen for new todo creation
-
 document.querySelector("#search-text").addEventListener("input", function (e) {
   filters.searchText = e.target.value
   renderTodos(todos, filters)
