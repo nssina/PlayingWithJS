@@ -12,6 +12,16 @@ const saveTodos = function (todos) {
     localStorage.setItem("todos", JSON.stringify(todos))
 }
 
+const removeTodo = function (id) {
+  const todoIndex = todos.findIndex(function (todos) {
+    return todos.id === id
+})
+
+if (todoIndex > -1) {
+    todos.splice(todoIndex, 1)
+}
+}
+
 const renderTodos = function (todos, filters) {
 
     const filteredTodos = todos.filter(function (todo) {
@@ -48,6 +58,11 @@ const renderTodos = function (todos, filters) {
 
     // Setup the remove button
     removeButton.textContent = "x"
+    removeButton.addEventListener('click', function () {
+      removeTodo(todo.id)
+      saveTodos(todos)
+      renderTodos(todos, filters)
+    })
 
     todoEl.appendChild(checkbox)
     todoEl.appendChild(todoText)
