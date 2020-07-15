@@ -22,6 +22,17 @@ if (todoIndex > -1) {
 }
 }
 
+// Toggle the completed value for given todo
+const toggleTodo = function (id) {
+  const todo = todos.find(function (todo) {
+    return todo.id === id
+  })
+
+  if (todo !== undefined) {
+    todo.completed = !todo.completed
+  }
+}
+
 const renderTodos = function (todos, filters) {
 
     const filteredTodos = todos.filter(function (todo) {
@@ -52,6 +63,12 @@ const renderTodos = function (todos, filters) {
 
     // Setup todo checkbox
     checkbox.setAttribute('type', 'checkbox')
+    checkbox.checked = todo.completed
+    checkbox.addEventListener('change', function () {
+      toggleTodo(todo.id)
+      saveTodos(todos)
+      renderTodos(todos, filters)
+    })
 
     // Setup the todo text
     todoText.textContent = todo.text
